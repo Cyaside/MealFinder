@@ -1,10 +1,9 @@
-
-
 import { useState } from "react"
 import HeroSection from "./components/HeroSection"
 import Navigation from "./components/Navigation"
 import SearchSection from "./components/SearchSection"
 import MealGrid from "./components/MealGrid"
+import MealDetail from "./components/MealDetail"
 import FavoritesSection from "./components/FavoritesSection"
 import "./App.css"
 
@@ -45,6 +44,25 @@ function App() {
     }
   }
 
+  // Get meal details
+  const getMealDetail = async (mealId) => {
+    setLoading(true)
+    setError("")
+
+    try {
+      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+      const data = await response.json()
+
+      if (data.meals && data.meals[0]) {
+        setSelectedMeal(data.meals[0])
+        setCurrentView("detail")
+      }
+    } catch (err) {
+      setError("Failed to fetch meal details.")
+    } finally {
+      setLoading(false)
+    }
+  }
 
   // Add to favorites
   const addToFavorites = (meal) => {
@@ -109,6 +127,7 @@ function App() {
             meals={meals}
             loading={loading}
             error={error}
+            onMealClick={getMealDetail}
             onAddToFavorites={addToFavorites}
             onRemoveFromFavorites={removeFromFavorites}
             isFavorite={isFavorite}
@@ -116,10 +135,20 @@ function App() {
         </div>
       )}
 
+      {currentView === "detail" && selectedMeal && (
+        <MealDetail
+          meal={selectedMeal}
+          onBack={goBack}
+          onAddToFavorites={addToFavorites}
+          onRemoveFromFavorites={removeFromFavorites}
+          isFavorite={isFavorite(selectedMeal.idMeal)}
+        />
+      )}
 
       {currentView === "favorites" && (
         <FavoritesSection
           favorites={favorites}
+          onMealClick={getMealDetail}
           onRemoveFromFavorites={removeFromFavorites}
         />
       )}

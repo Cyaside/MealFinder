@@ -1,11 +1,11 @@
-
+import MealCard from "./MealCard"
 
 const FavoritesSection = ({ favorites, onMealClick, onRemoveFromFavorites }) => {
   if (favorites.length === 0) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-4"></div>
+          <div className="text-6xl mb-4">❤️</div>
           <h2 className="text-2xl font-bold text-white mb-4">No Favorites Yet</h2>
           <p className="text-gray-400">Start adding your Fav meals to your favorites to see them here!</p>
         </div>
