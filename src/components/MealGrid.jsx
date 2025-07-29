@@ -1,6 +1,8 @@
 import MealCard from "./MealCard"
 
 const MealGrid = ({ meals, loading, error, onMealClick, onAddToFavorites, onRemoveFromFavorites, isFavorite }) => {
+  
+  // Loading state - show spinner
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
@@ -9,6 +11,7 @@ const MealGrid = ({ meals, loading, error, onMealClick, onAddToFavorites, onRemo
     )
   }
 
+  // Error state - show error message
   if (error) {
     return (
       <div className="text-center py-20">
@@ -18,6 +21,7 @@ const MealGrid = ({ meals, loading, error, onMealClick, onAddToFavorites, onRemo
     )
   }
 
+  // Empty state - no meals found
   if (meals.length === 0) {
     return (
       <div className="text-center py-20">
@@ -27,6 +31,7 @@ const MealGrid = ({ meals, loading, error, onMealClick, onAddToFavorites, onRemo
     )
   }
 
+  // Success state - display meals in grid
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-6">

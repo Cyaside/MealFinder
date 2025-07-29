@@ -94,12 +94,14 @@ function App() {
     setError("")
   }
 
+  // Navigate to Favourites page
   const goToFavorites = () => {
     setCurrentView("favorites")
     setSelectedMeal(null)
     setError("")
   }
 
+  // Navigate back
   const goBack = () => {
     if (currentView === "detail") {
       setCurrentView("search")
@@ -109,6 +111,7 @@ function App() {
     }
   }
 
+  // Different view based on CurrentView state
   return (
     <div className="App">
       <Navigation currentView={currentView} onHomeClick={goHome} onFavoritesClick={goToFavorites} />

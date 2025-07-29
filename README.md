@@ -1,12 +1,70 @@
-# React + Vite
+# MealFinder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Explore thousands of delicious recipes from around the world. Find your next favorite dish with just a few clicks.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React 18 with Vite
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **API**: TheMealDB API
+- **Build Tool**: Vite
 
-## Expanding the ESLint configuration
+## Colors Combinations Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Orange**
+- **Red**
+- **Pink**
+- **White**
+- **Gray**
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- Node.js (version 16 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository**
+
+   git clone https://github.com/Cyaside/MealFinder.git  
+   cd MealFinder2
+
+2. **Install dependencies**
+
+   npm install
+
+   or
+
+   yarn install
+
+3. **Start the development server by using**
+
+   npm run dev
+
+   or
+
+   yarn dev
+
+4. **_Open your browser_**  
+   Navigate to http://localhost:5173 to view the web
+
+## API Reference
+
+This Web uses [TheMealDB API](https://www.themealdb.com/api.php) which provides:
+
+- **Search meals by name**: \`https://www.themealdb.com/api/json/v1/1/search.php?s={meal_name}\`
+- **Get meal details by ID**: \`https://www.themealdb.com/api/json/v1/1/lookup.php?i={meal_id}\`
+
+## Usage
+
+1. **Home Page**: Start with the hero section and search section below
+2. **Search**: Enter a meal name to find recipes
+3. **Browse Results**: View search results in a grid layout
+4. **View Details**: Click on any meal card to see full details of the cuisines
+5. **Add to Favorites**: Click the heart icon to save meals to your favorites Section
+6. **Manage Favorites**: Access your saved meals from the Favorites page

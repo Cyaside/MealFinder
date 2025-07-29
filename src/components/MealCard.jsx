@@ -15,6 +15,7 @@ const MealCard = ({ meal, onMealClick, onAddToFavorites, onRemoveFromFavorites, 
       className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105"
       onClick={() => onMealClick(meal.idMeal)}
     >
+      {/* Meal image dengan favorite button*/}
       <div className="relative">
         <img src={meal.strMealThumb || "/placeholder.svg"} alt={meal.strMeal} className="w-full h-48 object-cover" />
         <button
@@ -28,7 +29,8 @@ const MealCard = ({ meal, onMealClick, onAddToFavorites, onRemoveFromFavorites, 
           <Heart size={20} fill={isFavorite ? "currentColor" : "none"} />
         </button>
       </div>
-
+      
+      {/* Meal information */}
       <div className="p-4">
         <h3 className="text-white font-semibold text-lg mb-2 line-clamp-2">{meal.strMeal}</h3>
         <div className="flex items-center justify-between">
